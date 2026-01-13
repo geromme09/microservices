@@ -18,7 +18,6 @@ func NewTripPreviewHandler(service domain.TripService) *HttpTripPreviewHandler {
 }
 
 func (h *HttpTripPreviewHandler) HandleTripPreview(w http.ResponseWriter, r *http.Request) {
-
 	var req previewTripRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
